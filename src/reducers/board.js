@@ -2,12 +2,12 @@ export const boardReducer= (boards=[],action)=>{
    switch(action.type){
       case "CREATE_BOARD":{
          const newBoard={
-            id:Date.Now()+'',
+            id:Date.now()+'',
             title:action.payload,
             lists:[],
             tasks:[]
          }
-         return [...boards,newBoad];
+         return [...boards,newBoard];
       }
       case "CHANGE_BOARD_NAME":{
          return boards.map(item=>{
@@ -18,7 +18,7 @@ export const boardReducer= (boards=[],action)=>{
          })
       }
       case "REMOVE_BOARD":{
-         return boards.filter((item)=>item.id!=action.payload);
+         return boards.filter((item)=>item.id!==action.payload);
       }
       case "ADD_LIST_ID_TO_A_BOARD":{
          const updatedBoards=boards.map((item)=>{

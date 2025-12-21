@@ -4,19 +4,19 @@ export const listReducer=(lists=[],action)=>{
          const newList={
             id:action.payload.id,
             title:action.payload.title,
-            boardId:action.payload,boardId,
+            boardId:action.payload.boardId,
             tasks:[],
          }
          return [...lists,newList]
       }
       case "UPDATE_LIST_NAME":{
-         const updatedList=lists.map((tiem)=>{
+         const updatedList=lists.map((item)=>{
             if(item.it===action.payload.id){
                return{...item,title:action.payload.title};
             }
             return item;
          });
-         return updatedLists;
+         return updatedList;
       }
       case "CHANGE_BOARD_ID":{
          const updatedLists=lists.map((item)=>{

@@ -15,7 +15,7 @@ root.render(
   <BoardProvider>
    <ListProvider>
       <TaskProvider>
-      <RouterProvider router={router}/>
+         <RouterProvider router={router}/>
       </TaskProvider>
    </ListProvider>
   </BoardProvider>

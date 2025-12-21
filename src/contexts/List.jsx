@@ -7,8 +7,8 @@ const ListProvider=({children})=>{
    const [lists,dispatchListActions]=useReducer(listReducer,[]);
 
    return(
-      <ListContext.Provider value={{lists, dispatchListAction}}>
-         {childred}
+      <ListContext.Provider value={{lists, dispatchListActions}}>
+         {children}
       </ListContext.Provider>
    );
 };
