@@ -5,6 +5,7 @@ import AddItem from "../components/AddItem";
 import AddItemForm from "../components/AddItemForm";
 import {BoardContext} from "../contexts/Board";
 import {ListContext} from "../contexts/List";
+import TaskList from "../components/TaskList";
 
 
 
@@ -41,7 +42,7 @@ const BoardDetails=()=>{
       <div className="d-flex m-top-sm flex-direction-row">
          <Link to="/">Back to Boards</Link>
          {renderedList.map((list)=>(
-            <li key={list.id}>{list.title}</li>
+            <TaskList key={list.id} list={list} />
          ))}
          {editMode===false ? 
          (<AddItem listAddItem={true} setEditMode={setEditMode}/>):
