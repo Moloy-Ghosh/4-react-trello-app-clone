@@ -4,7 +4,7 @@ const AddItem=({listAddItem,setEditMode})=>{
       <div className={ listAddItem ? "add-item list-add-item": "add-item task-add-item"} onClick={()=>setEditMode(true)}>
          <p calssName="add-item-icon">+</p>
          <p className="add-item-taxt">
-            {listAddItem?'Add a List' : 'Add a Task'}
+            {listAddItem?'List koro' : 'Task koro'}
          </p>
       </div>
    )
