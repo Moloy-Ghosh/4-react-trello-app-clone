@@ -4,6 +4,7 @@ import {ListContext} from "../contexts/List";
 import {TaskContext} from "../contexts/Task";
 import AddItem from "./AddItem";
 import AddItemForm from "./AddItemForm";
+import TaskCard from "./TaskList";
 
 const TaskList=({list})=>{
    const [taskTitle,setTaskTitle]=useState("");
@@ -71,7 +72,7 @@ const TaskList=({list})=>{
 
          </div>
             {list.tasks.map((item)=>tasks.find((e)=>e.id===item))
-            .map((task)=>(<li key={task.id}>{task.title}</li>)
+            .map((task)=>(<TaskCard key={task.id} task={task}/>)
             )}
 
             {editMode===false?(<AddItem listAddItem={false} setEditMode={setEditMode} />):
