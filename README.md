@@ -4,6 +4,9 @@
 
 This repository contains a multi-part project where I built a Trello-style project management application using React.
 
+🔗 **Live Demo:**  
+https://fancy-sprinkles-3be5d4.netlify.app/
+
 ### 🧩 Features Implemented
 - Create & manage boards  
 - Create lists inside boards
