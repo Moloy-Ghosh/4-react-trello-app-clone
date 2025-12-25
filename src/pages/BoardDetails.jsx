@@ -8,11 +8,17 @@ import {ListContext} from "../contexts/List";
 import TaskList from "../components/TaskList";
 
 
-
 const BoardDetails=()=>{
 
+   const [listTitle,setListTitle]=useState('');
+   const [editMode,setEditMode]=useState(false);
+   const {boardId}=useParams();
+   const {dispatchBoardActions}=useContext(BoardContext);
+   const {lists,dispatchListActions}=useContext(ListContext);
+   const renderedList=lists.filter((item)=>item.boardId===boardId);
+
    const submitHandler=(e)=>{
-      const id=Date.now()+('');
+      const id=Date.now()+"";
       e.preventDefault();
       dispatchListActions({type: "CREATE_LIST", payload:{
          id:id,
@@ -29,32 +35,23 @@ const BoardDetails=()=>{
       setEditMode(false);
       setListTitle("");
    }
-
-
-
-   const [listTitle,setListTitle]=useState('');
-   const [editMode,setEditMode]=useState(false);
-   const {boardId}=useParams();
-   const {dispatchBoardActions}=useContext(BoardContext);
-   const {lists,dispatchListActions}=useContext(ListContext);
-   const renderedList=lists.filter((item)=>item.boardId===boardId);
    return(
-      <div className="d-flex m-top-sm flex-direction-row">
-         <Link to="/">Back to Boards</Link>
-         {renderedList.map((list)=>(
-            <TaskList key={list.id} list={list} />
-         ))}
-         {editMode===false ? 
-         (<AddItem listAddItem={true} setEditMode={setEditMode}/>):
-         (<AddItemForm
-            listForm={true}
-            title={listTitle}
-            onChangeHandler={(e)=>setListTitle(e.target.value)}
-            setEditMode={setEditMode}
-            submitHandler={submitHandler}
-            />
-         )}
-      </div>
+      <div className="d-flex m-top-sm flex-direction-row ra">
+            <Link to="/">Home e Jao </Link>
+            {renderedList.map((list)=>(
+               <TaskList key={list.id} list={list} />
+            ))}
+            {editMode===false ? 
+            (<AddItem listAddItem={true} setEditMode={setEditMode}/>):
+            (<AddItemForm
+               listForm={true}
+               title={listTitle}
+               onChangeHandler={(e)=>setListTitle(e.target.value)}
+               setEditMode={setEditMode}
+               submitHandler={submitHandler}
+               />
+            )}
+         </div>
    );
 };
 

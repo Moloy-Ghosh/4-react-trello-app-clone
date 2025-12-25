@@ -22,7 +22,7 @@ const BoardCreatingForm=()=>{
                value={boardTitle}
                onChange={(e)=>setBoardTitle(e.target.value)}
             />
-            <button type="submit">Create Board</button>
+            <button type="submit">Board Banao</button>
          </form>
       </div>
    );

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const AddItemForm=({listForm, submitHandler, title, onChangeHandler,setEditMode})=>{
    return(
       <div className="form-container">
@@ -10,7 +8,7 @@ const AddItemForm=({listForm, submitHandler, title, onChangeHandler,setEditMode}
          </div>
          <div>
             <button className="add-button" onClick={submitHandler}>
-               {listForm ? "Add List" : "update Task"}
+               {listForm ? "List Koro" : "Task Koro"}
             </button>
             <p className="add-item-icon" onClick={()=>setEditMode(false)}>x</p>
          </div>

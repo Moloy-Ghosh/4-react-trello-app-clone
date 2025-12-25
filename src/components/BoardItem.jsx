@@ -8,6 +8,7 @@ const BoardItem=({board})=>{
    const {dispatchListActions}=useContext(ListContext);
    const {dispatchTaskActions}=useContext(TaskContext);
 
+
    const removeHandler=(e)=>{
       e.preventDefault();
       e.stopPropagation(); //link akare open houata bondo hobe
@@ -24,6 +25,10 @@ const BoardItem=({board})=>{
          <div className="d-flex justify-content-between">
             <h5>{board.title}</h5>
             <p onClick={removeHandler}>x</p>
+         </div>
+         <br/>
+         <div className="tarik">
+            <p>Have a nice Day</p>
          </div>
       </div>
    )

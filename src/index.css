@@ -8,9 +8,11 @@
  .board-box {
    width: 13rem;
    min-height: 5rem;
-   background-color: aqua;
+   background-color: #9F6881;
    border-radius: 5px;
    margin-top: 20px;
+   padding:13px;
+   color:#F8F1ED;
  }
  .align-center {
    display: flex;
@@ -22,6 +24,19 @@
  }
  .m-top-sm {
    margin-top: 20px;
+ }
+
+ .ra{
+   margin-left:52px;
+ }
+ .tarik{
+   color:#C3B8AA;
+ }
+ .tarik>p{
+   font-size:12px;
+ }
+ .ra>div{
+   margin-left:23px;
  }
  
  .title-gap {
@@ -52,7 +67,7 @@
    align-self: stretch;
  } */
  .list-container {
-   background-color: #ebecf0;
+   background-color: #B9B794;
    border-radius: 3px;
    min-width: 300px;
    padding: 8px;
@@ -84,16 +99,16 @@
    cursor: pointer;
    max-width: 100%;
    padding: 10px 5px 20px 5px; 
-   border: 1px solid rgb(116, 199, 226);
+   border: 1px solid #A7DCD7;
    word-wrap: break-word;
-   background-color: rgb(116, 199, 226);
+   background-color: #EEE4F1;
    border-radius: 3px;
-   box-shadow: 0 0 2px rgb(46, 153, 196);
+   box-shadow: 0 0 2px #969786;
  }
  .add-input {
    width: 100%;
    border: none;
-   outline-color: blue;
+   outline-color: black;
    border-radius: 3px;
    margin-bottom: 3px;
    padding: 5px;
@@ -120,21 +135,22 @@
  }
  .list-add-item {
    opacity: 1;
-   color: #ffffff;
-   background-color:#8abddb;
+   color: #AEE8CE;
+   background-color:#F1ECF7;
  }
  
  .task-add-item {
    opacity: 0.5;
-   color: inherit;
-   background-color:inherit;
+   color: white;
+   background-color:black;
  }
  .form-container {
    max-width: 280px;
    margin-bottom: 8px;
    max-height: 100px;
    /* min-height: 36px; */
-   background-color: rgb(116, 199, 226);
+   background-color: #B0EC9B;
+   color:#47455B;
    border-radius: 3px;
    box-shadow: 5px #000000;
    padding: 5px;
@@ -162,7 +178,8 @@
    margin-left: 8px;
  }
  .add-button {
-   background-color: #15438a;
+   background-color: #BDEEEF;
+   color:#716156;
    cursor: pointer;
    padding: 5px 20px;
    border-radius: 5px;
@@ -185,7 +202,7 @@
  
  .sidebar-container {
    max-width: 100px;
-   background-color: darkgrey;
+   background-color: black;
    /* padding: 5px 10px; */
  }
  .list-item {
@@ -193,7 +210,7 @@
    cursor: pointer;
  }
  .list-item:hover {
-   background-color: aqua;
+   background-color: black;
  }
  .menu {
    margin-right: 10px;

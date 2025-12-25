@@ -4,7 +4,7 @@ import {ListContext} from "../contexts/List";
 import {TaskContext} from "../contexts/Task";
 import AddItem from "./AddItem";
 import AddItemForm from "./AddItemForm";
-import TaskCard from "./TaskList";
+import TaskCard from "./TaskCard";
 
 const TaskList=({list})=>{
    const [taskTitle,setTaskTitle]=useState("");
@@ -64,23 +64,34 @@ const TaskList=({list})=>{
 
    return(
       <div className="list-container">
-         <div className="list-title-container">
-            <h5>{list.title}</h5>
-            <p onClick={removeHandler} className="add-item-icon">
-               x
-            </p>
+      <div className="list-title-container">
+         <h5>{list.title}</h5>
+         <p onClick={removeHandler} className="add-item-icon">
+            x
+         </p>
 
-         </div>
-            {list.tasks.map((item)=>tasks.find((e)=>e.id===item))
-            .map((task)=>(<TaskCard key={task.id} task={task}/>)
-            )}
-
-            {editMode===false?(<AddItem listAddItem={false} setEditMode={setEditMode} />):
-            (<AddItemForm title={taskTitle} onChangeHandler={(e)=>{
-               setTaskTitle(e.target.value);
-            }} setEditMode={setEditMode} submitHandler={submitHandler} />
-         )}
       </div>
+         {list?.tasks?.map((item)=>tasks.find((e)=>e.id===item))
+          ?.map((task, index)=>(
+          <TaskCard key={task.id} task={task} index={index}/>
+         )
+         )}
+
+         {editMode===false?(
+            <AddItem 
+            listAddItem={false} 
+            setEditMode={setEditMode} 
+            />
+         ):
+         (
+         <AddItemForm 
+         title={taskTitle} 
+         onChangeHandler={(e)=>{setTaskTitle(e.target.value);}} 
+         setEditMode={setEditMode} 
+         submitHandler={submitHandler} 
+         />
+      )}
+   </div>
    )
 }
 export default TaskList;
